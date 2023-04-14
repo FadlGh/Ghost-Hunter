@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity += 1.5f * Physics2D.gravity.y * Time.deltaTime * Vector2.up;
         }
-        else if (_rb.velocity.y > 0f && Input.GetButtonUp("Jump"))
+        else if (_rb.velocity.y > 0f && !Input.GetButton("Jump"))
         {
             _rb.velocity += 1f * Physics2D.gravity.y * Time.deltaTime * Vector2.up;
         }
