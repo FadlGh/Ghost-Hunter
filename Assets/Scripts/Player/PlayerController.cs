@@ -73,6 +73,22 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity += 1f * Physics2D.gravity.y * Time.deltaTime * Vector2.up;
         }
+        
+        if (_rb.velocity.y > 0f)
+        {
+            _am.SetBool("IsFalling", false);
+            _am.SetBool("IsJumping", true);
+        }
+        else if (_rb.velocity.y < 0f)
+        {
+            _am.SetBool("IsFalling", true);
+            _am.SetBool("IsJumping", false);
+        }
+        else
+        {
+            _am.SetBool("IsFalling", false);
+            _am.SetBool("IsJumping", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) & _canDash)
         {
@@ -89,6 +105,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         _rb.velocity = new Vector2(horizontal * _speed, _rb.velocity.y);
+        _am.SetFloat("Speed", Mathf.Abs(horizontal));
     }
 
     private bool IsGrounded()
