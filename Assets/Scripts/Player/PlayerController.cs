@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             _am.SetBool("IsFalling", true);
             _am.SetBool("IsJumping", false);
+            print(_rb.velocity.y);
         }
         else
         {
