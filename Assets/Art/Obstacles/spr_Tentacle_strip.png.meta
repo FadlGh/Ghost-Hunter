@@ -119,12 +119,12 @@ TextureImporter:
       name: spr_Tentacle_strip_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 0
-        width: 6
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: spr_Tentacle_strip_1
       rect:
         serializedVersion: 2
-        x: 22
+        x: 21
         y: 0
-        width: 6
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: spr_Tentacle_strip_2
       rect:
         serializedVersion: 2
-        x: 38
+        x: 37
         y: 0
-        width: 6
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: spr_Tentacle_strip_3
       rect:
         serializedVersion: 2
-        x: 55
+        x: 53
         y: 0
-        width: 5
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: spr_Tentacle_strip_4
       rect:
         serializedVersion: 2
-        x: 70
+        x: 69
         y: 0
-        width: 6
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: spr_Tentacle_strip_5
       rect:
         serializedVersion: 2
-        x: 86
+        x: 85
         y: 0
-        width: 7
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: spr_Tentacle_strip_6
       rect:
         serializedVersion: 2
-        x: 102
+        x: 101
         y: 0
-        width: 6
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: spr_Tentacle_strip_7
       rect:
         serializedVersion: 2
-        x: 118
+        x: 117
         y: 0
-        width: 7
+        width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
