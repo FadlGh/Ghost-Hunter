@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             _am.SetBool("IsFalling", false);
             _am.SetBool("IsJumping", true);
         }
-        else if (_rb.velocity.y < 0f)
+        else if (_rb.velocity.y < -2f)
         {
             _am.SetBool("IsFalling", true);
             _am.SetBool("IsJumping", false);
@@ -136,5 +136,11 @@ public class PlayerController : MonoBehaviour
         _isDashing = false;
         yield return new WaitForSeconds(_dashingCoolDown);
         _canDash = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(_groundCheck.position, 0.02f);
     }
 }
