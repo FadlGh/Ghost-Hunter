@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PatrolAI : MonoBehaviour
@@ -9,19 +10,24 @@ public class PatrolAI : MonoBehaviour
     private int currentWaypointIndex = 0;
     private Rigidbody2D rb;
     private bool patrolForward = true;
+    private bool isFacingRight = true;
+    private Vector2 direction;
+    private Vector2 targetPosition;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        targetPosition = waypoints[0].position;
+        direction = (targetPosition - (Vector2)transform.position).normalized;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector2 targetPosition = waypoints[currentWaypointIndex].position;
-
         if (Vector2.Distance(transform.position, targetPosition) < stoppingDistance)
         {
-            print("s");
+            targetPosition = waypoints[currentWaypointIndex].position;
+            direction = (targetPosition - (Vector2)transform.position).normalized;
+
             if (patrolForward)
             {
                 currentWaypointIndex++;
@@ -29,6 +35,7 @@ public class PatrolAI : MonoBehaviour
                 {
                     currentWaypointIndex = waypoints.Length - 2;
                     patrolForward = false;
+                    Flip();
                 }
             }
             else
@@ -38,14 +45,22 @@ public class PatrolAI : MonoBehaviour
                 {
                     currentWaypointIndex = 1;
                     patrolForward = true;
+                    Flip();
                 }
             }
         }
         else
-        {
-            Vector2 direction = (targetPosition - (Vector2)transform.position);
-            rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
-            print(Vector2.Distance(transform.position, targetPosition) < stoppingDistance);
+        { 
+            rb.velocity = speed * Time.fixedDeltaTime * direction;
+            print(rb.velocity.x);
         }
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 }
