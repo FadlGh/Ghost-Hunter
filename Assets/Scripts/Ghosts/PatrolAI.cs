@@ -3,62 +3,62 @@ using UnityEngine;
 
 public class PatrolAI : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private Transform[] waypoints;
-    [SerializeField] private float stoppingDistance;
+    [SerializeField] private float _speed = 2f;
+    [SerializeField] private Transform[] _waypoints;
+    [SerializeField] private float _stoppingDistance;
 
-    private int currentWaypointIndex = 0;
-    private Rigidbody2D rb;
-    private bool patrolForward = true;
-    private bool isFacingRight = true;
-    private Vector2 direction;
-    private Vector2 targetPosition;
+    private int _currentWaypointIndex = 0;
+    private Rigidbody2D _rb;
+    private bool _isPatrolingForward = true;
+    private bool _isFacingRight = true;
+    private Vector2 _direction;
+    private Vector2 _targetPosition;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        targetPosition = waypoints[0].position;
-        direction = (targetPosition - (Vector2)transform.position).normalized;
+        _rb = GetComponent<Rigidbody2D>();
+        _targetPosition = _waypoints[0].position;
+        _direction = (_targetPosition - (Vector2)transform.position).normalized;
     }
 
     void FixedUpdate()
     {
-        if (Vector2.Distance(transform.position, targetPosition) < stoppingDistance)
+        if (Vector2.Distance(transform.position, _targetPosition) < _stoppingDistance)
         {
-            targetPosition = waypoints[currentWaypointIndex].position;
-            direction = (targetPosition - (Vector2)transform.position).normalized;
+            _targetPosition = _waypoints[_currentWaypointIndex].position;
+            _direction = (_targetPosition - (Vector2)transform.position).normalized;
 
-            if (patrolForward)
+            if (_isPatrolingForward)
             {
-                currentWaypointIndex++;
-                if (currentWaypointIndex >= waypoints.Length)
+                _currentWaypointIndex++;
+                if (_currentWaypointIndex >= _waypoints.Length)
                 {
-                    currentWaypointIndex = waypoints.Length - 2;
-                    patrolForward = false;
+                    _currentWaypointIndex = _waypoints.Length - 2;
+                    _isPatrolingForward = false;
                     Flip();
                 }
             }
             else
             {
-                currentWaypointIndex--;
-                if (currentWaypointIndex < 0)
+                _currentWaypointIndex--;
+                if (_currentWaypointIndex < 0)
                 {
-                    currentWaypointIndex = 1;
-                    patrolForward = true;
+                    _currentWaypointIndex = 1;
+                    _isPatrolingForward = true;
                     Flip();
                 }
             }
         }
         else
         { 
-            rb.velocity = speed * Time.fixedDeltaTime * direction;
-            print(rb.velocity.x);
+            _rb.velocity = _speed * Time.fixedDeltaTime * _direction;
+            print(_rb.velocity.x);
         }
     }
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;
+        _isFacingRight = !_isFacingRight;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
