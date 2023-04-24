@@ -14,12 +14,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("s");
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            _playerRb.AddForce(Vector2.up * 10f, ForceMode2D.Impulse);
-            Destroy(collision.gameObject);
-            print("ss");
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Die");
+            collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            _playerRb.AddForce(Vector2.up * 15f, ForceMode2D.Impulse);
+            Destroy(collision.gameObject, 0.5f);
         }
     }
 }
