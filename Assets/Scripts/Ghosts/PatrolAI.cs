@@ -1,9 +1,8 @@
-using TMPro;
 using UnityEngine;
 
 public class PatrolAI : MonoBehaviour
 {
-    [SerializeField] private float _speed = 2f;
+    [SerializeField] private float _speed;
     [SerializeField] private Transform[] _waypoints;
     [SerializeField] private float _stoppingDistance;
 

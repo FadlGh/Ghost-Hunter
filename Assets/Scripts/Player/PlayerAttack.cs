@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private float _knockback;
     private Rigidbody2D _playerRb;
 
     private void Start()
@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().SetTrigger("Die");
             collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            _playerRb.AddForce(Vector2.up * 15f, ForceMode2D.Impulse);
+            _playerRb.AddForce(Vector2.up * _knockback, ForceMode2D.Impulse);
             Destroy(collision.gameObject, 0.5f);
         }
     }
