@@ -51,7 +51,6 @@ public class PatrolAI : MonoBehaviour
         else
         { 
             _rb.velocity = _speed * Time.fixedDeltaTime * _direction;
-            print(_rb.velocity.x);
         }
     }
 

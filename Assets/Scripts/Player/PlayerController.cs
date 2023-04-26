@@ -1,10 +1,12 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Move Settings")]
     [SerializeField] private float _speed;
+    [SerializeField] private ParticleSystem dust;
 
     [Header("Jump Settings")]
     [SerializeField] private float _jumpingPower;
@@ -117,6 +119,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
+            Instantiate(dust, transform.position, Quaternion.identity);
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;

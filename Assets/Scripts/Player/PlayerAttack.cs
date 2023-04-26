@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             _playerRb.AddForce(Vector2.up * _knockback, ForceMode2D.Impulse);
-            Destroy(collision.gameObject, 0.5f);
+            Destroy(collision.gameObject, 0.6f);
         }
     }
 }
