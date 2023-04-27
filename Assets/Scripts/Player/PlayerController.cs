@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Move Settings")]
     [SerializeField] private float _speed;
-    [SerializeField] private ParticleSystem dust;
 
     [Header("Jump Settings")]
     [SerializeField] private float _jumpingPower;
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private bool _canDash = true;
     private bool _isDashing;
-    private float _dashingCoolDown = 1f;
+    private const float _dashingCoolDown = 1f;
 
     private bool isFacingRight = true;
     private float horizontal;
@@ -119,7 +118,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            Instantiate(dust, transform.position, Quaternion.identity);
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
