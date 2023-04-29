@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Move Settings")]
     [SerializeField] private float _speed;
+    [SerializeField] private ParticleSystem _dust;
 
     [Header("Jump Settings")]
     [SerializeField] private float _jumpingPower;
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (_jumpBufferTimeCounter > 0f && _coyoteTimeCounter > 0f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpingPower);
+            CreateDust();
             _jumpBufferTimeCounter = 0f;
         }
 
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) & _canDash)
         {
+            CreateDust();
             StartCoroutine(Dash());
         }
 
@@ -122,6 +125,7 @@ public class PlayerController : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+            CreateDust();
         }
     }
 
@@ -139,6 +143,10 @@ public class PlayerController : MonoBehaviour
         _canDash = true;
     }
 
+    private void CreateDust()
+    {
+        _dust.Play();
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

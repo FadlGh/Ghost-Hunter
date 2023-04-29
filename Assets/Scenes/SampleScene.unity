@@ -1196,7 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769494553}
   - component: {fileID: 769494552}
-  - component: {fileID: 769494551}
+  - component: {fileID: 769494554}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1204,19 +1204,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &769494551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769494550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088061190bc2c61449c43b225cbf2a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _checkPoint: {fileID: 1957747384}
 --- !u!114 &769494552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,7 +1220,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 769494551}
+      - m_Target: {fileID: 769494554}
         m_TargetAssemblyTypeName: DieManager, Assembly-CSharp
         m_MethodName: Respawn
         m_Mode: 1
@@ -1260,6 +1247,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769494554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769494550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fcda92e6328f04398c9bbc2d140df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkPoint: {fileID: 1957747384}
 --- !u!1001 &773827007
 PrefabInstance:
   m_ObjectHideFlags: 0
