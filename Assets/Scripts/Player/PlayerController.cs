@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -76,7 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity += 1f * Physics2D.gravity.y * Time.deltaTime * Vector2.up;
         }
-        
+
         if (_rb.velocity.y > 0f)
         {
             _am.SetBool("IsFalling", false);
