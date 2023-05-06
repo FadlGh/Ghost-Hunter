@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a787b931a06994c45927152ff5e3f017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerDieEvent: {fileID: 11400000, guid: cb3244b50f31c654795bd160349ef3b1, type: 2}
+  _onPlayerDieEvent: {fileID: 11400000, guid: cb3244b50f31c654795bd160349ef3b1, type: 2}

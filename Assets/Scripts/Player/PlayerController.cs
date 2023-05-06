@@ -32,12 +32,15 @@ public class PlayerController : MonoBehaviour
     private Animator _am;
     private Rigidbody2D _rb;
 
-
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _am = GetComponent<Animator>();
+        Vector3 _checkPoint = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>()._checkPointPos;
+        if (_checkPoint != null)
+            transform.position = _checkPoint;
     }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
