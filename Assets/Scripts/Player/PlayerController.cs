@@ -36,9 +36,6 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _am = GetComponent<Animator>();
-        Vector3 _checkPoint = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>()._checkPointPos;
-        if (_checkPoint != null)
-            transform.position = _checkPoint;
     }
 
     void Update()

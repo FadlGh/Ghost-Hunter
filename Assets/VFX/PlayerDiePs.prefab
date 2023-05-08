@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4183851732453008773}
   - component: {fileID: 7668739820663312401}
   m_Layer: 0
-  m_Name: PlayerDiePs
+  m_Name: PlayerDiePS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,12 +20,13 @@ public class PlayerDeath : MonoBehaviour
 
     private IEnumerator RespawnCoroutine()
     {
-        if (_player != null)
-        {
-            _player.GetComponent<Animator>().SetTrigger("Die");
-            Instantiate(_playerDiePs, _player.transform.position, Quaternion.identity);
-        }
+
+        _player.GetComponent<Animator>().SetBool("isDead", true);
+        Instantiate(_playerDiePs, _player.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _player.GetComponent<Animator>().SetBool("isDead", false);
+        Vector3 _checkPoint = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>()._checkPointPos;
+        if (_checkPoint != null)
+            transform.position = _checkPoint;
     }
 }
