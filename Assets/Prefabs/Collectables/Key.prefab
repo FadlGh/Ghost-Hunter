@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _door: {fileID: 0}
-  _keyPs: {fileID: 0}
+  _keyPs: {fileID: 6001734282562620306, guid: 3af10ed1b8d368d4e8620ec8f14ad34a, type: 3}
