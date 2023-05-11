@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float _coyoteTimeCounter;
 
     private bool _canDash = true;
-    private bool _isDashing;
+    public bool _isDashing { private set; get; }
     private const float _dashingCoolDown = 1f;
 
     private bool isFacingRight = true;
