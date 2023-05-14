@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 1179498523}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,6 +717,24 @@ MonoBehaviour:
     volume: 1
     pitch: 0.5
     loop: 1
+    source: {fileID: 0}
+  - name: Key
+    clip: {fileID: 8300000, guid: 6039ba502388ea04280c53a6005ca3ae, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 9becbe398135cde418e6bab341a5f599, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: 9d207ad89ff3c9248ba0d2bd761ab73f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1179498524
 Transform:

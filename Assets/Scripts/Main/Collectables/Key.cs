@@ -10,6 +10,7 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameObject.FindGameObjectWithTag("AM").GetComponent<AudioManager>().Play("Key");
             Instantiate(_keyPs, transform.position, Quaternion.identity);
             Destroy(_door);
             Destroy(gameObject);

@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if (_jumpBufferTimeCounter > 0f && _coyoteTimeCounter > 0f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpingPower);
+            GameObject.FindGameObjectWithTag("AM").GetComponent<AudioManager>().Play("Jump");
             CreateDust();
             _jumpBufferTimeCounter = 0f;
         }

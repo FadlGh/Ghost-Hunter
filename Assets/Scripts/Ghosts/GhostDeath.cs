@@ -18,6 +18,7 @@ public class GhostDeath : MonoBehaviour
         {
             return;
         }
+        GameObject.FindGameObjectWithTag("AM").GetComponent<AudioManager>().Play("Attack");
         transform.parent.GetComponent<Animator>().SetTrigger("Die");
         _playerRb.AddForce(Vector2.up * _knockback, ForceMode2D.Impulse);
         Destroy(transform.parent.gameObject, 0.6f);
